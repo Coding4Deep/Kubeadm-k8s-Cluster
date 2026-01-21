@@ -2,7 +2,7 @@ This assumes your **Vagrant/EC2 setup**:
 
 * 1 master: `k8s-master `
 * 2 workers: `k8s-worker1`, `k8s-worker2`
-* OS: Ubuntu 20.04 / 22.04
+* OS: Ubuntu 20.04 / 22.04 / 24*
 * Runtime: **containerd** (Docker is deprecated for kubeadm)
 
 ---
