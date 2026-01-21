@@ -114,19 +114,8 @@ containerd config default | tee /etc/containerd/config.toml
 Edit config:
 
 ```bash
-vi /etc/containerd/config.toml
-```
-
-Find:
-
-```toml
-SystemdCgroup = false
-```
-
-Change to:
-
-```toml
-SystemdCgroup = true
+sudo sed -i 's/SystemdCgroup = false/SystemdCgroup = true/' \
+  /etc/containerd/config.toml
 ```
 
 ---
