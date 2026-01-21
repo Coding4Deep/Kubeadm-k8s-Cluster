@@ -389,11 +389,7 @@ kubectl get pods -o wide
 kubectl get svc nginx-service
 ```
 
-Expected:
 
-* **2 nginx pods**
-* Service type: `NodePort`
-* NodePort: `30080`
 
 ---
 
@@ -411,36 +407,8 @@ You should see:
 Welcome to nginx!
 ```
 
-This proves:
-
-* Pod networking works
-* Service routing works
-* kube-proxy is working
-* containerd + CNI are correct
-
 ---
 
-# 🧠 What’s Happening Behind the Scenes (Quick)
-
-1. Browser → Node IP : 30080
-2. kube-proxy intercepts traffic
-3. Routes to Service (`ClusterIP`)
-4. Load-balances across 2 pods
-5. Pod responds with NGINX page
-
----
-
-# 🧪 Test Load Balancing (Optional)
-
-Run multiple refreshes:
-
-```bash
-kubectl logs -l app=nginx
-```
-
-You’ll see requests hitting **both pods**.
-
----
 
 # 🧹 Cleanup (When Done)
 
