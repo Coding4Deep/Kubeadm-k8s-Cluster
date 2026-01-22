@@ -183,10 +183,9 @@ exit
 # 🔹 STEP 4 – INITIALIZE CONTROL PLANE (MASTER ONLY)
 
 ### Run ONLY on `k8s-master`
-
+#### use master node private ip 
 ```bash
-#use master ip addr
-kubeadm init \
+sudo kubeadm init \
   --apiserver-advertise-address=192.168.56.10 \
   --pod-network-cidr=192.168.0.0/16
 
@@ -265,7 +264,7 @@ Run the **join command** (from init output) on:
 Example:
 
 ```bash
-kubeadm join 192.168.56.10:6443 \
+sudo kubeadm join 192.168.56.10:6443 \
  --token abcdef.123456 \
  --discovery-token-ca-cert-hash sha256:xxxx
 ```
